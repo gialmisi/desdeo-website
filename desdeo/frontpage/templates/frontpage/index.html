@@ -1,0 +1,9 @@
+{% load static %}
+<h1>DESDEO framework front page</h1>
+{% if subpages_list %}
+{% for page in subpages_list %}
+<ul>
+  <li><a href="{{ page }}"> {{ page }} </li>
+</ul>
+{% endfor %}
+{% endif %}

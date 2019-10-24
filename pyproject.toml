@@ -7,6 +7,9 @@ authors = ["Giovanni Misitano <giovanni.a.misitano@jyu.fi>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 django = "^2.2"
+flake8 = "^3.7"
+black = "^19.3b0"
+Pillow = "^6.2"
 
 [tool.poetry.dev-dependencies]
 

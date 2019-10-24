@@ -1,0 +1,11 @@
+{% load static %}
+<h1>Crème de la crème</h1>
+{% if bios_list %}
+  {% for bio in bios_list %}
+  <p></p>
+  <img src="{{ bio.image.url }}">
+  <h3>{{ bio.name }}</h3>
+  <p>{{ bio.description }}</p>
+  <a href="mailto:{{ bio.email }}">{{ bio.email }}</a>
+  {% endfor %}
+{% endif %}
