@@ -6,10 +6,13 @@ The homepages for the DESDEO framework implemented in Django.
 ### Done
 - Frontpage
 - Biographies
-### WIP
+- Publications
 - News
+### WIP
+- About
 
 ### Not started
 - The rest
 
+# Specs
 ![Image of the website specifications](https://github.com/gialmisi/desdeo-website/blob/master/img/DESDEO_website_specs.png "Specifications for the website")
