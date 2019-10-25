@@ -1,0 +1,10 @@
+{% load static %}
+<h1>Publications</h1>
+{% if bibentry_list %}
+{% for entry in bibentry_list %}
+<h3><a href={{ entry.doi_url }}>{{ entry.title }}</a></h3>
+<p><b>{{ entry.authors }}</b>, {{ entry.journal_title }}, {{ entry.volume_and_issue }}, {{ entry.pages }}, {{entry.year }}</p>
+{% endfor %}
+{% endif %}
+<p></p>
+<a href="/">Back</a>

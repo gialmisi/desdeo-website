@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'biographies.apps.BiographiesConfig',
     'frontpage.apps.FrontpageConfig',
     'news.apps.NewsConfig',
+    'publications.apps.PublicationsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
