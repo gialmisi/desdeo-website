@@ -8,8 +8,9 @@ The homepages for the DESDEO framework implemented in Django.
 - Biographies
 - Publications
 - News
-### WIP
 - About
+### WIP
+- Get involved
 
 ### Not started
 - The rest
