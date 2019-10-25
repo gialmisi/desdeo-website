@@ -1,0 +1,9 @@
+{% load static %}
+<h1>About the DESDEO framework</h1>
+{% if about_text %}
+<p>{{ about_text.text }}</p>
+{% else %}
+<p>No about text specified. Specify it on the administration page.</p>
+{% endif %}
+<p></p>
+<a href="/">Back</a>

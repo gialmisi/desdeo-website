@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 def index(request):
     subpages_list = [
+        "about",
         "team",
         "news",
         "publications",
