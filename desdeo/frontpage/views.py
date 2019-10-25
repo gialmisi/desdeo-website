@@ -6,6 +6,7 @@ def index(request):
         "about",
         "team",
         "news",
+        "blog",
         "publications",
         "getinvolved",
     ]

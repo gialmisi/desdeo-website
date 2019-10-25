@@ -1,0 +1,10 @@
+{% load static %}
+{% load markdown_filter %}
+<h1>Blog</h1>
+{% if blog_contents_list %}
+{% for blog in blog_contents_list %}
+{{ blog | markdown | safe }}
+{% endfor %}
+{% endif %}
+<p></p>
+<a href="/">Back</a>

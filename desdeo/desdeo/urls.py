@@ -26,6 +26,7 @@ urlpatterns = [
     path("publications/", include("publications.urls")),
     path("about/", include("about.urls")),
     path("getinvolved/", include("getinvolved.urls")),
+    path("blog/", include("blog.urls")),
     path('admin/', admin.site.urls),
 ]
 
