@@ -7,6 +7,7 @@ def index(request):
         "team",
         "news",
         "publications",
+        "getinvolved",
     ]
     context = {
         "subpages_list": subpages_list,
