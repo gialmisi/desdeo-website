@@ -6,8 +6,10 @@ The homepages for the DESDEO framework implemented in Django.
 ### Done
 - Frontpage
 - Biographies
-### WIP
+- Publications
 - News
+### WIP
+- About
 
 ### Not started
 - The rest
