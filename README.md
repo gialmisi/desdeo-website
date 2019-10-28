@@ -10,11 +10,13 @@ The homepages for the DESDEO framework implemented in Django.
 - News
 - About
 - Get involved
+- Blog with markdown support
+
 ### WIP
-- Blog
+- Software
 
 ### Not started
-- The rest
+- DESDEO framework
 
 # Specs
 ![Image of the website specifications](https://github.com/gialmisi/desdeo-website/blob/master/img/DESDEO_website_specs.png "Specifications for the website")

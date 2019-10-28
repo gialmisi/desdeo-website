@@ -1,9 +1,13 @@
 {% load static %}
 {% load markdown_filter %}
-<h1>Blog</h1>
-{% if blog_contents_list %}
-{% for blog in blog_contents_list %}
-{{ blog | markdown | safe }}
+<h1 align="center">Blog</h1>
+<hr>
+{% if blog_list %}
+{% for blog in blog_list %}
+<h1 align="center">{{ blog.title }}</h1>
+{{ blog.contents_raw | markdown | safe }}
+<p align="right"><small><i>Published on {{blog.pub_date}} by {{blog.author}}</i></small></p>
+<hr>
 {% endfor %}
 {% endif %}
 <p></p>

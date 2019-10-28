@@ -1,5 +1,6 @@
 {% load static %}
-<h1>Publications</h1>
+<h1 align="center">Publications</h1>
+<hr>
 {% if bibentry_list %}
 {% for entry in bibentry_list %}
 <h3><a href={{ entry.doi_url }}>{{ entry.title }}</a></h3>

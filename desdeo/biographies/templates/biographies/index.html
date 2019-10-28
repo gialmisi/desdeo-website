@@ -1,5 +1,6 @@
 {% load static %}
-<h1>Meet the team</h1>
+<h1 align="center">Meet the team</h1>
+<hr>
 {% if bios_list %}
   {% for bio in bios_list %}
   <p></p>
@@ -7,6 +8,7 @@
   <h3>{{ bio.name }}</h3>
   <p>{{ bio.description }}</p>
   <a href="mailto:{{ bio.email }}">{{ bio.email }}</a>
+  <hr>
   {% endfor %}
 {% endif %}
 

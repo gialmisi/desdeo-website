@@ -1,11 +1,12 @@
 {% load static %}
-<h1>Recent news</h1>
+<h1 align="center">Recent news</h1>
+<hr>
 {% if article_list %}
 {% for article in article_list %}
 <h2>{{ article.title }}</h2>
 <p>{{ article.contents }}</p>
-<i>{{article.author}}, {{ article.pub_date }}</i>
-<p></p>
+<p align="right"><small><i>Published on {{ article.pub_date }}</i></small><p>
+<hr>
 {% endfor %}
 {% endif %}
 <p></p>
