@@ -4,6 +4,7 @@ from django.shortcuts import render
 def index(request):
     subpages_list = [
         "about",
+        "desdeoframework",
         "software",
         "team",
         "news",

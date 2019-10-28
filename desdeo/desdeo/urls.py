@@ -28,6 +28,7 @@ urlpatterns = [
     path("getinvolved/", include("getinvolved.urls")),
     path("blog/", include("blog.urls")),
     path("software", include("software.urls")),
+    path("desdeoframework", include("desdeoframework.urls")),
     path('admin/', admin.site.urls),
 ]
 

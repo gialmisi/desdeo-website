@@ -1,0 +1,10 @@
+{% load static %}
+<h1 align="center">The DESDEO framework</h1>
+<hr>
+{% if framework_text %}
+<p>{{ framework_text.text }}</p>
+{% else %}
+<p>No framework text specified. Specify it on the administration page.</p>
+{% endif %}
+<p></p>
+<a href="/">Back</a>

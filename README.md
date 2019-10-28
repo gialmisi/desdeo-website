@@ -12,12 +12,20 @@ The homepages for the DESDEO framework implemented in Django.
 - Get involved
 - Blog with markdown support
 - Software
-
-### WIP
 - DESDEO framework
 
-### Not started
-- Styling of the pages
+### To be done
+- Add markdown support for other pages that need it as well, not just blog.
+
+## Styling
+### Done
+- Nothing
+
+### WIP
+- NOTHING
+
+### Not started 
+- Everything
 
 # Specs
 ![Image of the website specifications](https://github.com/gialmisi/desdeo-website/blob/master/img/DESDEO_website_specs.png "Specifications for the website")
