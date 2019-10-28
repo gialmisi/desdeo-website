@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'publications.apps.PublicationsConfig',
     'about.apps.AboutConfig',
     'getinvolved.apps.GetinvolvedConfig',
+    'software.apps.SoftwareConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',

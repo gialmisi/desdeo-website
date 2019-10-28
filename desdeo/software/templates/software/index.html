@@ -1,0 +1,10 @@
+{% load static %}
+<h1 align="center">Software</h1>
+<hr>
+{% if software_text %}
+<p>{{ software_text.text }}</p>
+{% else %}
+<p>No sofware text specified. Specify it on the administration page.</p>
+{% endif %}
+<p></p>
+<a href="/">Back</a>
