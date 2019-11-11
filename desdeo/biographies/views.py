@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .models import Bio
+from frontpage.views import subpages_list
 
 
 def index(request):
@@ -8,4 +9,5 @@ def index(request):
     context = {
         "bios_list": bios_list,
     }
+    print(subpages_list)
     return render(request, "biographies/index.html", context)
