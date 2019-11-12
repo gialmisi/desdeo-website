@@ -1,13 +1,36 @@
+{% extends "frontpage/base.html" %}
 {% load static %}
-<h1 align="center">Recent news</h1>
-<hr>
+{% load markdown_filter %}
+{% block content %}
+<h1 class="display-4">News</h1>
 {% if article_list %}
 {% for article in article_list %}
-<h2>{{ article.title }}</h2>
-<p>{{ article.contents }}</p>
-<p align="right"><small><i>Published on {{ article.pub_date }}</i></small><p>
-<hr>
+<div class=" container text-justify">
+  <h3>{{article.title}} &ndash; <span class="text-muted h4">{{ article.pub_date }}</span></h3>
+  {{ article.contents | markdown | safe }}
+  <div class="text-right font-italic text-small">
+    <small>Posted by {{ article.author }}</small>
+  </div>
+  {% if not forloop.last %}
+  <hr class="col-2">
+  {% endif %}
+</div>
 {% endfor %}
+{% else %}
+<p>No software news specified. Specify it on the administration page.</p>
 {% endif %}
-<p></p>
-<a href="/">Back</a>
+<hr>
+{% endblock %}
+
+<!-- <h1 align="center">Recent news</h1> -->
+<!-- <hr> -->
+<!-- {% if article_list %} -->
+<!-- {% for article in article_list %} -->
+<!-- <h2>{{ article.title }}</h2> -->
+<!-- <p>{{ article.contents }}</p> -->
+<!-- <p align="right"><small><i>Published on {{ article.pub_date }}</i></small><p> -->
+<!-- <hr> -->
+<!-- {% endfor %} -->
+<!-- {% endif %} -->
+<!-- <p></p> -->
+<!-- <a href="/">Back</a> -->

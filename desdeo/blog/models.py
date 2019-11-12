@@ -9,7 +9,7 @@ class BlogContent(models.Model):
     author = models.CharField(max_length=100)
     pub_date = models.DateField()
     title = models.CharField(max_length=200)
-    contents = models.FileField(upload_to="blogposts/")
+    contents = models.TextField()
 
     def __str__(self):
         return self.title

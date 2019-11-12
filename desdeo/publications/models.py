@@ -1,17 +1,17 @@
 from django.db import models
 
 
-class BibEntry(models.Model):
+class Publication(models.Model):
     """Defines a bibliographical entry.
 
     """
-    authors = models.TextField(max_length=200)
-    title = models.TextField(max_length=200)
-    journal_title = models.CharField(max_length=200)
-    volume_and_issue = models.CharField(max_length=100)
-    pages = models.CharField(max_length=100)
-    year = models.IntegerField(default=2000)
-    doi_url = models.CharField(max_length=100)
+    authors = models.TextField(max_length=200, help_text="List of authors")
+    title = models.TextField(max_length=200, help_text="Title of the publication")
+    year = models.IntegerField(default=2000, help_text="Publication year. Used for sorting.")
+    type = models.CharField(max_length=100, default="Journal article", help_text="Type of publication, example: Journal article, conference paper")
+    info = models.TextField(help_text="Example: journal name, issue, pages, publication year")
+    doi_url = models.CharField(max_length=100, help_text="Link to publisher's webpage.")
+    open_access_url = models.CharField(max_length=100, help_text="Link to open access source.")
 
     def __str__(self):
         return self.title

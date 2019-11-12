@@ -15,9 +15,9 @@
 
 <!-- <p></p> -->
 <!-- <a href="/">Back</a> -->
-
+<h1 class="display-4">Team</h1>
 <h1 class="text-center">Meet the core team behind the framework</h1>
-
+<div class="container">
 {% if bios_list %}
 {% for bio in bios_list %}
 {% if forloop.counter0|divisibleby:2 %}
@@ -88,5 +88,6 @@
     <!-- {% endif %} -->
     <!-- <\!-- End featurettes -\-> -->
 
-<hr>
+  <hr>
+  </div>
 {% endblock %}

@@ -1,11 +1,14 @@
 from django.shortcuts import render
 
-from .models import BibEntry
-
+from .models import Publication
+from frontpage.views import subpages_list
 
 def index(request):
-    bibentry_list = BibEntry.objects.order_by("year")[::-1]
+    publication_list = Publication.objects.order_by("-year")
+    
     context = {
-        "bibentry_list": bibentry_list,
+        "publication_list": publication_list,
+        "subpages_list": subpages_list,
+        "this_page": "publications",
     }
     return render(request, "publications/index.html", context)

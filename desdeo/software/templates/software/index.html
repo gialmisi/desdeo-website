@@ -2,8 +2,9 @@
 {% load static %}
 {% load markdown_filter %}
 {% block content %}
+<h1 class="display-4">Software</h1>
 {% if content %}
-<div class="text-justify">
+<div class=" container text-justify">
   {{ content.contents | markdown | safe }}
 </div>
 {% else %}

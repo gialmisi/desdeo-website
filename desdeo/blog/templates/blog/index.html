@@ -1,14 +1,39 @@
+{% extends "frontpage/base.html" %}
 {% load static %}
 {% load markdown_filter %}
-<h1 align="center">Blog</h1>
-<hr>
+{% block content %}
+<h1 class="display-4">Blog</h1>
 {% if blog_list %}
 {% for blog in blog_list %}
-<h1 align="center">{{ blog.title }}</h1>
-{{ blog.contents_raw | markdown | safe }}
-<p align="right"><small><i>Published on {{blog.pub_date}} by {{blog.author}}</i></small></p>
-<hr>
+<div class=" container text-justify">
+  <h1>{{blog.title}}</h1>
+  <div class="container">
+  {{ blog.contents | markdown | safe }}
+  <div class="text-right font-italic text-small">
+    <small>Posted by {{ blog.author }} on {{blog.pub_date }}</small>
+  </div>
+  {% if not forloop.last %}
+  <hr class="col-2">
+  </div>
+  {% endif %}
+</div>
 {% endfor %}
+{% else %}
+<p>No blogs specified. Specify it on the administration page.</p>
 {% endif %}
-<p></p>
-<a href="/">Back</a>
+<hr>
+{% endblock %}
+<!-- {% load static %} -->
+<!-- {% load markdown_filter %} -->
+<!-- <h1 align="center">Blog</h1> -->
+<!-- <hr> -->
+<!-- {% if blog_list %} -->
+<!-- {% for blog in blog_list %} -->
+<!-- <h1 align="center">{{ blog.title }}</h1> -->
+<!-- {{ blog.contents_raw | markdown | safe }} -->
+<!-- <p align="right"><small><i>Published on {{blog.pub_date}} by {{blog.author}}</i></small></p> -->
+<!-- <hr> -->
+<!-- {% endfor %} -->
+<!-- {% endif %} -->
+<!-- <p></p> -->
+<!-- <a href="/">Back</a> -->

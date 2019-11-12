@@ -1,4 +1,14 @@
+{% extends "frontpage/base.html" %}
 {% load static %}
-<h1 align="center">How to get involved with DESDEO</h1>
+{% load markdown_filter %}
+{% block content %}
+<h1 class="display-4">Get involved</h1>
+{% if content %}
+<div class="container text-justify">
+  {{ content.contents | markdown | safe}}
+</div>
+{% else %}
+<p>No get involved content specified. Specify it on the administration page.</p>
+{% endif %}
 <hr>
-<a href="/">Back</a>
+{% endblock %}
