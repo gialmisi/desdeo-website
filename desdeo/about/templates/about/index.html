@@ -1,10 +1,13 @@
+{% extends "frontpage/base.html" %}
 {% load static %}
-<h1 align="center">About the DESDEO framework</h1>
-<hr>
-{% if about_text %}
-<p>{{ about_text.text }}</p>
+{% load markdown_filter %}
+{% block content %}
+{% if content %}
+<div class="text-justify">
+  {{ content.contents | markdown | safe}}
+</div>
 {% else %}
-<p>No about text specified. Specify it on the administration page.</p>
+<p>No about content specified. Specify it on the administration page.</p>
 {% endif %}
-<p></p>
-<a href="/">Back</a>
+<hr>
+{% endblock %}

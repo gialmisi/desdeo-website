@@ -26,11 +26,11 @@ class SingletonModel(models.Model):
         return obj
 
 
-class SoftwareText(SingletonModel):
+class Content(SingletonModel):
     """The main text appering on the About page.
 
     """
-    text = models.TextField(default=None)
+    contents = models.TextField(help_text="The main contents of the software page. Markdown is supported.")
 
     def __str__(self):
-        return "The main text contents"
+        return "The main contents of the software page."

@@ -1,17 +1,23 @@
 from django.shortcuts import render
 
-from .models import SoftwareText
+from .models import Content
+from frontpage.views import subpages_list
+
 
 
 def index(request):
     # singletons are always attributed the key 1
     try:
-        software_text = SoftwareText.objects.get(pk=1)
+        content = Content.objects.get(pk=1)
     except:
-        software_text = None
+        content = None
+
+    print(content)
 
     context = {
-        "software_text": software_text,
+        "content": content,
+        "subpages_list": subpages_list,
+        "this_page": "software",
     }
 
     return render(request, "software/index.html", context)

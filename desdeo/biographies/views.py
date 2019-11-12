@@ -1,13 +1,18 @@
 from django.shortcuts import render
 
-from .models import Bio
+from .models import Bio, OtherContributor
 from frontpage.views import subpages_list
 
 
 def index(request):
-    bios_list = Bio.objects.all()
+    bios_list = Bio.objects.order_by("name").all()
+    others_list = OtherContributor.objects.order_by("name").all()
+
     context = {
         "bios_list": bios_list,
+        "others_list": others_list,
+        "subpages_list": subpages_list,
+        "this_page": "team",
     }
-    print(subpages_list)
+
     return render(request, "biographies/index.html", context)
