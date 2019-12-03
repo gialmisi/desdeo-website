@@ -2,9 +2,9 @@
 {% load static %}
 {% load markdown_filter %}
 {% block content %}
-<h1 class="display-4">About</h1>
+<h1 class="mb-5 text-secondary">About</h1>
 {% if content %}
-<div class="container text-justify">
+<div class="text-justify">
   {{ content.contents | markdown | safe}}
 </div>
 {% else %}

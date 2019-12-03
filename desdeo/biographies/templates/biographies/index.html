@@ -15,9 +15,9 @@
 
 <!-- <p></p> -->
 <!-- <a href="/">Back</a> -->
-<h1 class="display-4">Team</h1>
+<h1 class="mb-5 text-secondary">Team</h1>
 <h1 class="text-center">Meet the core team behind the framework</h1>
-<div class="container">
+<div class="">
 {% if bios_list %}
 {% for bio in bios_list %}
 {% if forloop.counter0|divisibleby:2 %}
@@ -28,11 +28,12 @@
 <div class="row mt-5">
   {% endif %}
   <!-- Bio entry -->
-  <div class="col-lg-6 text-center d-flex flex-column">
-    <img class="rounded-circle" src="{{ bio.image.thumbnail.url }}" alt="{{ bio.name }}" style="align-self: center">
-    <h2 class="text-center d-flex flex-column">{{ bio.name }}</h2>
-    <p class="text-justify d-flex flex-column mb-auto">{{ bio.description }}</p>
-    <p><a class="btn btn-secondary mt-2" href="mailto:{{ bio.email }}" role="button">Contact</a></p>
+    <div class="col-lg-6 text-center d-flex flex-column">
+	<img class="rounded-circle" src="{{ bio.image.thumbnail.url }}" alt="{{ bio.name }}" style="align-self: center">
+	<h2 class="text-center d-flex flex-column">{{ bio.name }}</h2>
+	<span class="text-muted">Expertise: {{ bio.keywords }}</span>
+	<p class="text-justify d-flex flex-column mb-auto mx-3">{{ bio.description }}</p>
+	<p><a class="btn btn-secondary mt-2" href="mailto:{{ bio.email }}" role="button">Contact</a></p>
   </div>
   {% if forloop.counter|divisibleby:2 or forloop.last %}
   <!-- close row  if index uneven-->

@@ -9,6 +9,7 @@ class Bio(models.Model):
     """
     name = models.CharField(max_length=100)
     description = models.TextField(max_length=1000, help_text="Max length 1000 characters.")
+    keywords = models.CharField(max_length=100, help_text="Keywords to give a brief idea of fields of expertise")
     email = models.EmailField(max_length=100)
     image = StdImageField(upload_to="images/", variations={"thumbnail": {"width": 140, "height": 140, "crop": True}}, help_text="Image ratio should be 1:1 and size greater than 140 by 140 pixels.")
 

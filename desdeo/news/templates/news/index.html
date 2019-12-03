@@ -2,10 +2,10 @@
 {% load static %}
 {% load markdown_filter %}
 {% block content %}
-<h1 class="display-4">News</h1>
+<h1 class="mb-5 text-secondary">News</h1>
 {% if article_list %}
 {% for article in article_list %}
-<div class=" container text-justify">
+<div class="text-justify">
   <h3>{{article.title}} &ndash; <span class="text-muted h4">{{ article.pub_date }}</span></h3>
   {{ article.contents | markdown | safe }}
   <div class="text-right font-italic text-small">
