@@ -50,6 +50,14 @@ sqlparse = "*"
 
 [[package]]
 category = "main"
+description = "Deletes old files."
+name = "django-cleanup"
+optional = false
+python-versions = "*"
+version = "4.0.0"
+
+[[package]]
+category = "main"
 description = "Django Standarized Image Field"
 name = "django-stdimage"
 optional = false
@@ -190,7 +198,7 @@ python-versions = "*"
 version = "0.10.0"
 
 [metadata]
-content-hash = "5767830de0b8ed2cb1cb812f1b65a1e245607605fd19ff5d148da10ac33e0910"
+content-hash = "5b43cf5c605e94cd0dc78a473fa041117dd267de6465242096bd4f43bc14ed6f"
 python-versions = "^3.7"
 
 [metadata.hashes]
@@ -199,6 +207,7 @@ attrs = ["08a96c641c3a74e44eb59afb61a24f2cb9f4d7188748e76ba4bb5edfa3cb7d1c", "f7
 black = ["09a9dcb7c46ed496a9850b76e4e825d6049ecd38b611f1224857a79bd985a8cf", "68950ffd4d9169716bcb8719a56c07a2f4485354fec061cdd5910aa07369731c"]
 click = ["2335065e6395b9e67ca716de5f7526736bfa6ceead690adf616d925bdc622b13", "5b94b49521f6456670fdb30cd82a4eca9412788a93fa6dd6df72c94d5a8ff2d7"]
 django = ["4025317ca01f75fc79250ff7262a06d8ba97cd4f82e93394b2a0a6a4a925caeb", "a8ca1033acac9f33995eb2209a6bf18a4681c3e5269a878e9a7e0b7384ed1ca3"]
+django-cleanup = ["412c3f9417ddaaaa561b60237b109550b16e556db92d4616278fc7e1ad9ab0a4", "b2bdb590eccc1a8e0688d5c6224080d3bb4a77e5bad1688fbe452d8c3454d755"]
 django-stdimage = ["3b31b02508398dc301111c92aaa3423b899a3d667d1f884a50b6511f819680ac", "aa5e090a26eb0469fb218ef681c76f329f2508d744d490832b3d9e409df6337d"]
 entrypoints = ["589f874b313739ad35be6e0cd7efde2a4e9b6fea91edcc34e58ecbb8dbe56d19", "c70dd71abe5a8c85e55e12c19bd91ccfeec11a6e99044204511f9ed547d48451"]
 flake8 = ["19241c1cbc971b9962473e4438a2ca19749a7dd002dd1a946eaba171b4114548", "8e9dfa3cecb2400b3738a42c54c3043e821682b9c840b0448c0503f781130696"]

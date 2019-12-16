@@ -3,6 +3,50 @@
 
 {% block carousel %}
 <!-- Carousel -->
+<style>
+ .carousel-indicators li {
+     background-color: grey;
+ }
+ .carousel-indicators .active {
+     background-color: black;
+ }
+ .carousel-item img {
+     width: auto;
+     height: 600px;
+     max-heigth: 600px;
+ }
+</style>
+<!-- <div id="main-carousel" class="carousel slide bg-light" data-ride="carousel">
+     <ol class="carousel-indicators">
+     {% if carousel_images %}
+     {% for image in carousel_images %}
+     {% if forloop.counter0 == 0 %}
+     <li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+     {% else %}
+     <li data-target="#main-carousel" data-slide-to="{{ forloop.counter0 }}"></li>
+     {% endif %}
+     {% endfor %}
+     {% endif %}
+     </ol>
+     <div class="carousel-inner">
+     {% if carousel_images %}
+     {% for image in carousel_images %}
+     {% if forloop.counter0 == 0 %}
+     <div class="carousel-item active">
+     {% else %}
+     <div class="carousel-item">
+     {% endif %}
+     <img class="d-block w-50 h-50 img-fluid" src={{ image.image.large.url }} alt="{{ image.name }}" style="margin: auto;">
+     <div class="carousel-caption d-none d-md-block text-light w-50" style="margin: auto;">
+     <h4 class="h4-responsive font-weight-bold text-center w-75" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; margin: auto">{{ image.description }}</h4>
+     </div>
+     </div>
+     {% endfor %}
+     {% endif %}
+     </div>
+     </div>
+     </div> -->
+<!-- End carousel -->
 <div id="main-carousel" class="carousel slide bg-light" data-ride="carousel">
     <ol class="carousel-indicators">
 	{% if carousel_images %}
@@ -23,17 +67,15 @@
 	    {% else %}
 	    <div class="carousel-item">
 		{% endif %}
-		<img class="d-block w-50 h-50 img-fluid" src={{ image.image.large.url }} alt="{{ image.name }}" style="margin: auto;">
+		<img class="d-block img-fluid" src={{ image.image.large.url }} alt="{{ image.name }}" style="margin: auto;">
 		<div class="carousel-caption d-none d-md-block text-light w-50" style="margin: auto;">
-		    <h3 class="h3-responsive font-weight-bold" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black">{{ image.description }}</h3>
+		    <h4 class="h4-responsive font-weight-bold text-center w-75" style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; margin: auto">{{ image.description }}</h4>
 		</div>
 	    </div>
 	    {% endfor %}
-	    {% endif %}
-	</div>
+	    {% endif %}	
     </div>
 </div>
-<!-- End carousel -->
 {% endblock %}
     
 {% block content %}
@@ -42,7 +84,9 @@
     {% for featurette in featurettes %}
     {% if forloop.counter0|divisibleby:2 %}
     <!-- Justify left -->
+    {% if forloop.counter0 != 0 %}
     <hr class="featurette-divider">
+    {% endif %}
     <div class="row featurette">
 	<div class="col-md-7">
 	    <h2 class="featurette-heading">{{ featurette.title }}</h2>

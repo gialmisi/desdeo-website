@@ -29,9 +29,10 @@
   {% endif %}
   <!-- Bio entry -->
     <div class="col-lg-6 text-center d-flex flex-column">
-	<img class="rounded-circle" src="{{ bio.image.thumbnail.url }}" alt="{{ bio.name }}" style="align-self: center">
-	<h2 class="text-center d-flex flex-column">{{ bio.name }}</h2>
+	<img class="rounded-circle" src="{{ bio.image.thumbnail.url }}" alt="{{ bio.first_name }}" style="align-self: center">
+	<h2 class="text-center d-flex flex-column">{{ bio.first_name }} {{ bio.surname }}</h2>
 	<span class="text-muted">Expertise: {{ bio.keywords }}</span>
+	<p></p>
 	<p class="text-justify d-flex flex-column mb-auto mx-3">{{ bio.description }}</p>
 	<p><a class="btn btn-secondary mt-2" href="mailto:{{ bio.email }}" role="button">Contact</a></p>
   </div>
@@ -47,7 +48,7 @@
 <h2 class="text-center">Other notable contributors to the DESDEO framework</h2>
 <div class="entry-content text-center">
     {% for other in others_list %}
-    <p>{{ other.name }}</p>
+    <p>{{ other.first_name }} {{ other.surname }}</p>
     {% endfor %}
     <h3>Thank you all for your contributions!</h3>
 </div>

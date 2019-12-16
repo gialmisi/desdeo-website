@@ -5,8 +5,8 @@ from frontpage.views import subpages_list
 
 
 def index(request):
-    bios_list = Bio.objects.order_by("name").all()
-    others_list = OtherContributor.objects.order_by("-name").all()
+    bios_list = Bio.objects.order_by("surname").order_by("order").all()
+    others_list = OtherContributor.objects.order_by("surname").all()
 
     context = {
         "bios_list": bios_list,

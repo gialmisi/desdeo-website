@@ -1,14 +1,31 @@
 {% extends "frontpage/base.html" %}
 {% load static %}
 {% load markdown_filter %}
+
 {% block content %}
 <h1 class="mb-5 text-secondary">About</h1>
 {% if content %}
-<div class="text-justify">
-  {{ content.contents | markdown | safe}}
+<div id="aboutcontents" class="text-justify">
+    {{ content.contents | markdown | safe }}
 </div>
 {% else %}
 <p>No about content specified. Specify it on the administration page.</p>
 {% endif %}
+
+{% if downloadables_list %}
+<h2 class="mt-5">Downloads</h2>
+<ul>
+    {% for item in downloadables_list %}
+    <li><a href="{{ item.file.url }}">{{ item.name }}</a> - <span class="text-muted">{{ item.description }}</span></li>
+    {% endfor %}
+</ul>
+{% endif %}
 <hr>
+
+<style>
+ #aboutcontents > p > img {
+     max-width: 100%;
+     margin: auto;
+ }
+</style>
 {% endblock %}

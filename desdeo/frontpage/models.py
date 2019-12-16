@@ -7,8 +7,17 @@ class CarouselImages(models.Model):
 
     """
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=1000)
-    image = StdImageField(upload_to="images/", variations={"large": {"width": 800, "height": 600}})
+    description = models.TextField(max_length=1000,
+                                   blank=True,
+                                   help_text="Caption text to be shown on the image."
+    )
+    order = models.IntegerField(
+        help_text=("Order of the displayed image in the carousel in ascending order. Smaller is first.")
+    )
+    image = StdImageField(upload_to="images/",
+                          variations={"large": {"width": 800, "height": 400}},
+                          help_text=("Image should be 800x400 pixels, or bigger.")
+    )
 
     def __str__(self):
         return self.name
@@ -20,10 +29,21 @@ class Featurette(models.Model):
 
     """
     title = models.CharField(max_length=100)
-    text_content = models.TextField(max_length=1000)
-    link = models.CharField(max_length=100)
-    order = models.IntegerField()
-    image = models.ImageField(upload_to="images/", help_text="Image should be big, preferably bigger than 400 by 600 pixels.")
+    text_content = models.TextField(max_length=1000,
+                                    help_text=("The text to be shown next to the featurette."),
+    )
+    link = models.CharField(max_length=100,
+                            help_text=("The link the button on the featurettes redirects to."),
+    )
+    order = models.IntegerField(
+        help_text=("Order of the displayed featurette in ascending order. Smaller is first.")
+    )
+    image = models.ImageField(
+        upload_to="images/",
+        help_text=("Image should be big, preferably bigger than 800 by 400 pixels, "
+                   "and should have an aspect ratio of 2:1. If any padding is added, "
+                   "it should be transparent. Use a png format.")
+    )
 
     def __str__(self):
         return self.title

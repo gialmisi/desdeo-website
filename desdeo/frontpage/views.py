@@ -18,7 +18,7 @@ def index(request):
     # pk=1 is safe for singleton models, it's the only entry
     featurettes = Featurette.objects.order_by("order").all()
 
-    carousel_images = CarouselImages.objects.all()
+    carousel_images = CarouselImages.objects.order_by("order").all()
 
     context = {
         "subpages_list": subpages_list,

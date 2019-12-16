@@ -1,4 +1,15 @@
 from django.db import models
+from django.core.files.storage import FileSystemStorage
+from django.conf import settings
+
+class OverwriteStorage(FileSystemStorage):
+    """If a file name with the same name exists, remove the old file.
+
+    """
+    def get_available_name(self, name, max_length=100):
+        if self.exists(name):
+            os.remove(os.path.join(self.location, name))
+        return name
 
 
 class SingletonModel(models.Model):
@@ -30,7 +41,20 @@ class Content(SingletonModel):
     """The main text appering on the About page.
 
     """
-    contents = models.TextField(help_text="The main contents of the software page. Markdown is supported.")
+    contents = models.TextField(help_text="The main contents of the software page. Markdown is supported. "
+                                "Image names should follow the path '/media/images/about/'. Example: "
+                                "'/media/images/software/figure_name.png'.")
 
     def __str__(self):
         return "The main contents of the software page."
+
+
+class Image(models.Model):
+    content = models.ForeignKey(Content, models.CASCADE, related_name="images")
+    name = models.CharField(max_length=100)
+    image = models.ImageField(
+        upload_to="images/software",
+        storage=OverwriteStorage())
+
+    def __str__(self):
+        return self.name

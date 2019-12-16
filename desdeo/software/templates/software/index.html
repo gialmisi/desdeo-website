@@ -4,11 +4,19 @@
 {% block content %}
 <h1 class="mb-5 text-secondary">Software</h1>
 {% if content %}
-<div class="text-justify">
+<div id="aboutsoftware"  class="text-justify">
   {{ content.contents | markdown | safe }}
 </div>
 {% else %}
 <p>No software content specified. Specify it on the administration page.</p>
 {% endif %}
 <hr>
+
+<style>
+    #aboutsoftware > p > img {
+	max-width 100%;
+	margin: auto;
+	display: block;
+    }
+</style>
 {% endblock %}
