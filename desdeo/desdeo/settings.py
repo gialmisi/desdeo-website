@@ -19,17 +19,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_(c)pg0s+k#%t#n6idhcc$kdr8_79i801ur*y7l5p8vybk^(z!'
+# Specify this path explicitly in production!
+with open("/home/kilo/workspace/desdeo-website/desdeo/secret_key.txt") as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost"]
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # Application definition
-
 INSTALLED_APPS = [
     'biographies.apps.BiographiesConfig',
     'frontpage.apps.FrontpageConfig',
@@ -128,11 +130,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
+
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# set explicitly!
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
+# set explicitly!
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
