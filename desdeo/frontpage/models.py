@@ -15,8 +15,8 @@ class CarouselImages(models.Model):
         help_text=("Order of the displayed image in the carousel in ascending order. Smaller is first.")
     )
     image = StdImageField(upload_to="images/",
-                          variations={"large": {"width": 800, "height": 400}},
-                          help_text=("Image should be 800x400 pixels, or bigger.")
+                          variations={"large": {"width": 1200, "height": 600}},
+                          help_text=("Image should be 1200x600 pixels, or bigger.")
     )
 
     def __str__(self):
