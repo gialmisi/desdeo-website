@@ -20,13 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # Specify this path explicitly in production!
-with open("/home/kilo/workspace/desdeo-website/desdeo/secret_key.txt") as f:
+with open("/var/www/secret_key.txt") as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = [".misitano.xyz"]
+
+ADMINS = [("Giovanni", "giovanni.misitano@gmail.com")]
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
@@ -89,7 +91,7 @@ WSGI_APPLICATION = 'desdeo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': "/var/www/desdeo-data/db.sqlite3",
     }
 }
 
@@ -136,9 +138,10 @@ USE_TZ = True
 # )
 
 STATIC_URL = '/static/'
-# set explicitly!
+# static files are under version control, but this can be changed, if needed!
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
-# set explicitly!
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# these are media files, these change, and should not be in version control! the database
+# and media folder should have the same prefix
+MEDIA_ROOT = "/var/www/desdeo-data/media/"
