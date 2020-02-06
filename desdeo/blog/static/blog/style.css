@@ -1,5 +1,5 @@
 .blogcontents img {
-    width: 50%;
+    max-width: 90%;
     margin: auto;
     display: block;
 }
