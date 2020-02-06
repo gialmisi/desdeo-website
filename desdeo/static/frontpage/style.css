@@ -1,16 +1,6 @@
 .carousel-inner > .carousel-item {
 }
 
-#jyulogo {
-	width: auto;
-	height: 35px;
-}
-
-#optgrouplogo {
-	width: 100px;
-	height: 80px;
-}
-
 .carousel .carousel-indicators li {
   background-color: #fff;
   background-color: rgba(70, 70, 70, 0.25);
@@ -32,3 +22,4 @@
 	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	margin: auto;
 }
+

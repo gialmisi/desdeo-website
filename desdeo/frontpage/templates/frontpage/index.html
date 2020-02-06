@@ -1,5 +1,9 @@
-{% extends "frontpage/base.html" %}
+{% extends "base/base.html" %}
 {% load static %}
+
+{% block style %}
+<link rel="stylesheet" href={% static "frontpage/style.css" %} type="text/css"/>
+{% endblock %}
 
 {% block carousel %}
 <!-- Carousel -->

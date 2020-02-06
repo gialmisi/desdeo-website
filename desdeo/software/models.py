@@ -42,7 +42,7 @@ class Content(SingletonModel):
 
     """
     contents = models.TextField(help_text="The main contents of the software page. Markdown is supported. "
-                                "Image names should follow the path '/media/images/about/'. Example: "
+                                "Image names should follow the path '/media/images/software/'. Example: "
                                 "'/media/images/software/figure_name.png'.")
 
     def __str__(self):
