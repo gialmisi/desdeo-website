@@ -1,5 +1,15 @@
 from django.contrib import admin
 
-from .models import BlogContent
+from .models import BlogContent, Image
 
-admin.site.register(BlogContent)
+
+class ImageInline(admin.TabularInline):
+    model = Image
+    extra = 1
+
+
+class ImageAdmin(admin.ModelAdmin):
+    inlines = [ ImageInline, ]
+
+
+admin.site.register(BlogContent, ImageAdmin)
