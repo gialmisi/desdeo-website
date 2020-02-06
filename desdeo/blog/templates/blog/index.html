@@ -1,9 +1,11 @@
 {% extends "frontpage/base.html" %}
 {% load static %}
 {% load markdown_filter %}
+
 {% block title %}
 | Blog
 {% endblock %}
+
 {% block content %}
 <h1 class="mb-5 text-secondary">Blog</h1>
 {% if blog_list %}
@@ -26,17 +28,3 @@
 {% endif %}
 <hr>
 {% endblock %}
-<!-- {% load static %} -->
-<!-- {% load markdown_filter %} -->
-<!-- <h1 align="center">Blog</h1> -->
-<!-- <hr> -->
-<!-- {% if blog_list %} -->
-<!-- {% for blog in blog_list %} -->
-<!-- <h1 align="center">{{ blog.title }}</h1> -->
-<!-- {{ blog.contents_raw | markdown | safe }} -->
-<!-- <p align="right"><small><i>Published on {{blog.pub_date}} by {{blog.author}}</i></small></p> -->
-<!-- <hr> -->
-<!-- {% endfor %} -->
-<!-- {% endif %} -->
-<!-- <p></p> -->
-<!-- <a href="/">Back</a> -->

@@ -1,40 +1,27 @@
 {% extends "frontpage/base.html" %}
+{% load static %}
 {% block title %}
 | Team
 {% endblock %}
-{% block content %}
-<!-- <h1 align="center">Meet the team</h1> -->
-<!-- <hr> -->
-<!-- {% if bios_list %} -->
-<!--   {% for bio in bios_list %} -->
-<!--   <p></p> -->
-<!--   <img src="{{ bio.image.url }}"> -->
-<!--   <h3>{{ bio.name }}</h3> -->
-<!--   <p>{{ bio.description }}</p> -->
-<!--   <a href="mailto:{{ bio.email }}">{{ bio.email }}</a> -->
-<!--   <hr> -->
-<!--   {% endfor %} -->
-<!-- {% endif %} -->
 
-<!-- <p></p> -->
-<!-- <a href="/">Back</a> -->
+{% block style %}
+<link rel="stylesheet" type="text/css" href={% static "biographies/style.css" %}>
+{% endblock %}
+
+{% block content %}
 <h1 class="mb-5 text-secondary">Team</h1>
 <h1 class="text-center">Meet the core team behind the framework</h1>
 <div class="">
 {% if bios_list %}
 {% for bio in bios_list %}
 {% if forloop.counter0|divisibleby:2 %}
-<!-- If index is even, begin new row -->
-<!-- {% if forloop.counter0 != 0 %} -->
-<!-- <hr class="col-lg-8"> -->
-<!-- {% endif %} -->
 <div class="row mt-5">
   {% endif %}
   <!-- Bio entry -->
     <div class="col-lg-6 text-center d-flex flex-column">
-	<img class="rounded-circle" src="{{ bio.image.thumbnail.url }}" alt="{{ bio.first_name }}" style="align-self: center">
+	<img id="profilepic" class="rounded-circle" src="{{ bio.image.thumbnail.url }}" alt="{{ bio.first_name }}">
 	<h2 class="text-center d-flex flex-column">{{ bio.first_name }} {{ bio.surname }}</h2>
-	<span class="text-muted">Expertise: {{ bio.keywords }}</span>
+	<span class="text-muted mx-3">Expertise: {{ bio.keywords }}</span>
 	<p></p>
 	<p class="text-justify d-flex flex-column mb-auto mx-3">{{ bio.description }}</p>
 	<p><a class="btn btn-secondary mt-2" href="mailto:{{ bio.email }}" role="button">Contact</a></p>
@@ -56,43 +43,6 @@
     <h3>Thank you all for your contributions!</h3>
 </div>
 {% endif %}
-
-    <!-- <\!-- Featurettes -\-> -->
-    <!-- {% if bios_list %} -->
-    <!-- {% for bio in bios_list %} -->
-    <!-- {% if forloop.counter0|divisibleby:2 %} -->
-    <!-- <\!-- Justify left -\-> -->
-    <!-- <hr class="featurette-divider"> -->
-    <!-- <div class="row featurette"> -->
-    <!-- 	<div class="col-md-7"> -->
-    <!-- 	    <h2 class="featurette-heading">{{ bio.name }}</h2> -->
-    <!-- 	    <p class="lead">{{ bio.description }}</p> -->
-    <!-- 	    <p><a class="btn btn-secondary" href="mailto:{{ bio.email }}" role="button">Contact</a></p> -->
-    <!-- 	</div> -->
-    <!-- 	<div class="col-md-5"> -->
-    <!-- 	    <img class="featurette-image rounded-circle img-fluid mx-auto rounded" src={{ bio.image.url }} alt="Image of {{ bio.name }}" width="140" height="140"> -->
-    <!-- 	</div> -->
-    <!-- </div> -->
-    <!-- {% else %} -->
-    <!-- <\!-- Justify right -\-> -->
-    <!-- <hr class="featurette-divider"> -->
-    <!-- <div class="row featurette"> -->
-    <!-- 	<div class="col-md-7 order-md-2 text-right"> -->
-    <!-- 	    <h2 class="featurette-heading">{{ bio.name }}</h2> -->
-    <!-- 	    <p class="lead">{{ bio.description }}</p> -->
-    <!-- 	    <p><a class="btn btn-secondary" href="mailto:{{ bio.email }}" role="button">Contact</a></p> -->
-    <!-- 	</div> -->
-    <!-- 	<div class="col-md-5 order-md-1"> -->
-    <!-- 	    <img class="featurette-image rounded-circle img-fluid mx-auto rounded" src={{ bio.image.url }} alt="Image of {{bio.name }}" width="140" height="140"> -->
-    <!-- 	</div> -->
-    <!-- </div> -->
-    <!-- {% endif %} -->
-    <!-- {% endfor %} -->
-    <!-- <hr class="featurette-divider"> -->
-    <!-- </div> -->
-    <!-- {% endif %} -->
-    <!-- <\!-- End featurettes -\-> -->
-
   <hr>
   </div>
 {% endblock %}

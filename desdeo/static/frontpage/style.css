@@ -1,0 +1,46 @@
+.carousel-inner > .carousel-item {
+}
+
+#jyulogo {
+	width: auto;
+	height: 35px;
+}
+
+#optgrouplogo {
+	width: 100px;
+	height: 80px;
+}
+
+
+/*
+.carousel-indicators li {
+	background-color: grey;
+}
+
+.carousel-indicators .active {
+ 	background-color: black;
+}
+
+.carousel-item img {
+	max-width: 100%;
+	max-height: 800px;
+	width: auto 9;
+	height: auto;
+	vertical-align: middle;
+	border: 0;
+	-ms-inerpolation-mode: bicubic;
+}
+*/
+
+#carouselimage {
+	margin: auto;
+}
+
+#carouselcaptiondiv {
+	margin: auto;
+}
+
+#carouselcaption {
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	margin: auto;
+}

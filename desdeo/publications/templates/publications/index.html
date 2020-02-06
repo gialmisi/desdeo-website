@@ -1,7 +1,9 @@
 {% extends "frontpage/base.html" %}
+
 {% block title %}
 | Publications
 {% endblock %}
+
 {% block content %}
 <h1 class="mb-5 text-secondary">Publications</h1>
 <div>
@@ -13,22 +15,13 @@
 <h6 class="font-weight-bold">{{ publication.authors }}</h6>
 <h6>{{ publication.info }}</h6>
 {% if publication.doi_url %}
-<a href={{ publication.doi_url }}>DOI</a> |
+<a href={{ publication.doi_url }}>DOI</a>
 {% endif %}
-<a href={{ publication.open_access_url }}>Open access</a>
+{% if publication.open_access_url %}
+ | <a href={{ publication.open_access_url }}>Open access</a>
+{% endif %}
 {% endfor %}
 {% endif %}
 </div>
 <hr>
 {% endblock %}
-<!-- {% load static %} -->
-<!-- <h1 align="center">Publications</h1> -->
-<!-- <hr> -->
-<!-- {% if bibentry_list %} -->
-<!-- {% for entry in bibentry_list %} -->
-<!-- <h3><a href={{ entry.doi_url }}>{{ entry.title }}</a></h3> -->
-<!-- <p><b>{{ entry.authors }}</b>, {{ entry.journal_title }}, {{ entry.volume_and_issue }}, {{ entry.pages }}, {{entry.year }}</p> -->
-<!-- {% endfor %} -->
-<!-- {% endif %} -->
-<!-- <p></p> -->
-<!-- <a href="/">Back</a> -->

@@ -1,8 +1,14 @@
 {% extends "frontpage/base.html" %}
 {% load static %}
 {% load markdown_filter %}
+
+
 {% block title %}
 | About
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" type="text/css" href={% static "about/style.css" %}>
 {% endblock %}
 
 {% block content %}
@@ -24,11 +30,4 @@
 </ul>
 {% endif %}
 <hr>
-
-<style>
- #aboutcontents > p > img {
-     max-width: 100%;
-     margin: auto;
- }
-</style>
 {% endblock %}

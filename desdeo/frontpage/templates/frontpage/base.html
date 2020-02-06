@@ -13,10 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href={% static "css/bootstrap.min.css" %} type="text/css"/>
     <!-- Custom style -->
-    <style>
-     .carousel-inner > .carousel-item {
-     }
-    </style>
+    <link rel="stylesheet" href={% static "frontpage/style.css" %} type="text/css"/>
+    {% block style %}
+    {% endblock %}
   </head>
 
   <body>
@@ -24,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white sticky-top">
       <div class="container">
 	  <a class="navbar-brand" href="/">DESDEO
-	      <img src="{% static "images/jyu-logo.png" %}" alt="site logo" style="width: auto; height: 35px;">
+	      <img id="jyulogo" src="{% static "images/jyu-logo.png" %}" alt="site logo">
 	  </a>
 	{% if subpages_list %}
 	<ul class="nav nav-pills">
@@ -59,7 +58,7 @@
 	<div class="container" align=center>
 	    <div class="float-left col-6">
 		<img class="img-fluid mr-5 mb-3" src="{% static "images/jyu-keskitetty-kaksikielinen.png" %}" alt="jyu-logo">
-		<img class="img-fluid" src="{% static "images/optgroup-logo.png" %}" alt="opt-logo" style="width: 100px; height: 80px">
+		<img id="optgrouplogo" class="img-fluid" src="{% static "images/optgroup-logo.png" %}" alt="opt-logo">
 	    </div>
 	    <div class="float-right col-6 align-bottom mt-5">
 		<small class="mr-2">Developing the DESDEO framework is funded by the Academy of Finland (project numbers: 287496 in 2015-2019 and 322221 in 2019-2023).</small>

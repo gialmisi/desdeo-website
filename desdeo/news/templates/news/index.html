@@ -1,9 +1,11 @@
 {% extends "frontpage/base.html" %}
 {% load static %}
 {% load markdown_filter %}
+
 {% block title %}
 | News
 {% endblock %}
+
 {% block content %}
 <h1 class="mb-5 text-secondary">News</h1>
 {% if article_list %}
@@ -24,16 +26,3 @@
 {% endif %}
 <hr>
 {% endblock %}
-
-<!-- <h1 align="center">Recent news</h1> -->
-<!-- <hr> -->
-<!-- {% if article_list %} -->
-<!-- {% for article in article_list %} -->
-<!-- <h2>{{ article.title }}</h2> -->
-<!-- <p>{{ article.contents }}</p> -->
-<!-- <p align="right"><small><i>Published on {{ article.pub_date }}</i></small><p> -->
-<!-- <hr> -->
-<!-- {% endfor %} -->
-<!-- {% endif %} -->
-<!-- <p></p> -->
-<!-- <a href="/">Back</a> -->

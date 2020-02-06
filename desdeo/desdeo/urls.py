@@ -37,3 +37,6 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # Admin site settings
 admin.site.site_header = "DESDEO Webpage Content Management"
+
+admin.site.index_template = "admin/index.html"
+admin.autodiscover()
