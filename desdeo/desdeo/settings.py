@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'getinvolved.apps.GetinvolvedConfig',
     'software.apps.SoftwareConfig',
     'blog.apps.BlogConfig',
-    'desdeoframework.apps.DesdeoframeworkConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

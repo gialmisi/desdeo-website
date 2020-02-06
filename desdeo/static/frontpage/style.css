@@ -11,26 +11,14 @@
 	height: 80px;
 }
 
-
-/*
-.carousel-indicators li {
-	background-color: grey;
+.carousel .carousel-indicators li {
+  background-color: #fff;
+  background-color: rgba(70, 70, 70, 0.25);
 }
 
-.carousel-indicators .active {
- 	background-color: black;
+.carousel .carousel-indicators .active {
+  background-color: #444;
 }
-
-.carousel-item img {
-	max-width: 100%;
-	max-height: 800px;
-	width: auto 9;
-	height: auto;
-	vertical-align: middle;
-	border: 0;
-	-ms-inerpolation-mode: bicubic;
-}
-*/
 
 #carouselimage {
 	margin: auto;
