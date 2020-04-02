@@ -137,3 +137,4 @@ dmypy.json
 
 desdeo/static/admin/*
 .dummy_settings.py
+.vscode

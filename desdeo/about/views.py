@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Content, Downloadable
+from .models import Content, Downloadable, Video
 from frontpage.views import subpages_list
 
 
@@ -13,9 +13,12 @@ def index(request):
 
     downloadables_list = Downloadable.objects.all()
 
+    videos_list = Video.objects.all()
+
     context = {
         "content": content,
         "downloadables_list": downloadables_list,
+        "videos_list": videos_list,
         "subpages_list": subpages_list,
         "this_page": "about",
     }

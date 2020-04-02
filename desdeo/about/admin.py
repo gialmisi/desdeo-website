@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Content, Image, Downloadable
+from .models import Content, Image, Downloadable, Video
 
 
 class ImageInline(admin.TabularInline):
@@ -9,8 +9,9 @@ class ImageInline(admin.TabularInline):
 
 
 class ImageAdmin(admin.ModelAdmin):
-    inlines = [ ImageInline, ]
+    inlines = [ImageInline]
 
 
 admin.site.register(Content, ImageAdmin)
 admin.site.register(Downloadable)
+admin.site.register(Video)

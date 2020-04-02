@@ -21,8 +21,21 @@
 <p>No about content specified. Specify it on the administration page.</p>
 {% endif %}
 
+{% if videos_list %}
+<h2 class="mt-5">Videos</h2>
+{% for video in videos_list %}
+    <h4 class="mt-5">{{ video.name }}</h4>
+    <iframe width="560" height="315"
+    src="{{ video.url }}"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+    <p>{{ video.description }}</p>
+{% endfor %}
+{% endif %}
+
 {% if downloadables_list %}
-<h2 class="mt-5">Downloads</h2>
+<h2 class="mt-5">Materials</h2>
 <ul>
     {% for item in downloadables_list %}
     <li><a href="{{ item.file.url }}">{{ item.name }}</a> - <span class="text-muted">{{ item.description }}</span></li>
