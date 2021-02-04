@@ -8,7 +8,6 @@ subpages_list = [
         ("software", "Software"),
         ("team", "Team"),
         ("news", "News"),
-        ("blog", "Blog"),
         ("publications", "Publications"),
         ("getinvolved", "Get involved"),
     ]
