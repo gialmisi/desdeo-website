@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "about.apps.AboutConfig",
     "getinvolved.apps.GetinvolvedConfig",
     "software.apps.SoftwareConfig",
+    "materials.apps.MaterialsConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",

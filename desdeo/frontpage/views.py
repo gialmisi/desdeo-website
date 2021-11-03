@@ -4,13 +4,14 @@ from .models import Featurette, CarouselImages
 
 # tuples of url names and display names
 subpages_list = [
-        ("about", "About"),
-        ("software", "Software"),
-        ("team", "Team"),
-        ("news", "News"),
-        ("publications", "Publications"),
-        ("getinvolved", "Get involved"),
-    ]
+    ("about", "About"),
+    ("software", "Software"),
+    ("team", "Team"),
+    ("news", "News"),
+    ("publications", "Publications"),
+    ("getinvolved", "Get involved"),
+    ("materials", "Materials"),
+]
 
 
 def index(request):
