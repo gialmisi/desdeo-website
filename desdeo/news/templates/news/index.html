@@ -6,13 +6,17 @@
 | News
 {% endblock %}
 
+{% block style %}
+<link rel="stylesheet" type="text/css" href={% static "news/style.css" %}>
+{% endblock %}
+
 {% block content %}
 <h1 class="mb-5 text-secondary">News</h1>
 {% if article_list %}
 {% for article in article_list %}
 <div class="text-justify">
   <h3>{{article.title}} &ndash; <span class="text-muted h4">{{ article.pub_date }}</span></h3>
-  {{ article.contents | markdown | safe }}
+  <div id="newscontents">{{ article.contents | markdown | safe }}</div>
   <div class="text-right font-italic text-small">
     <small>Posted by {{ article.author }}</small>
   </div>
