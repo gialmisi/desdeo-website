@@ -6,7 +6,9 @@ class MaterialEntry(models.Model):
     """
 
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=1000, help_text=("Short description about the file."))
+    description = models.TextField(
+        max_length=1000, help_text=("Short description about the file.")
+    )
 
     def __str__(self):
         return self.name
@@ -15,5 +17,10 @@ class MaterialEntry(models.Model):
 class MaterialFile(models.Model):
     name = models.CharField(max_length=100, help_text="Name associated with the file.")
     file = models.FileField(help_text="File to be made available")
-    material_entry = models.ForeignKey(MaterialEntry(), on_delete=models.CASCADE, related_name="files")
+    material_entry = models.ForeignKey(
+        MaterialEntry(), on_delete=models.CASCADE, related_name="files"
+    )
+
+    def __str__(self):
+        return self.name
 
