@@ -5,45 +5,49 @@
 {% endblock %}
 
 {% block content %}
+<h1 class="mb-3 text-secondary">Publications</h1>
+<h3 class="mb-1 text-secondary">Contents</h3>
+<a href="#desdeo">Papers related to DESDEO</a> | <a href="#other">Other papers</a>
+<hr>
 <!-- Publications related to DESDEO -->
-<h1 class="mb-5 text-secondary">Publications related to DESDEO</h1>
+<h1 id="desdeo" class="mb-5 text-secondary">Publications related to DESDEO</h1>
 <div>
-{% if publication_list %}
-{% for publication in publication_list %}
-<span class="text-muted">{{publication.type }}</span>
-<h4>{{ publication.title }}</h4>
-<h6 class="font-weight-bold">{{ publication.authors }}</h6>
-<h6>{{ publication.info }}</h6>
-{% if publication.doi_url %}
-<a href={{ publication.doi_url }}>DOI</a>
-{% endif %}
-{% if publication.open_access_url %}
- | <a href={{ publication.open_access_url }}>Open access</a>
-{% endif %}
-<p></p>
-{% endfor %}
-{% endif %}
+    {% if publication_list %}
+    {% for publication in publication_list %}
+    <span class="text-muted">{{publication.type }}</span>
+    <h4>{{ publication.title }}</h4>
+    <h6 class="font-weight-bold">{{ publication.authors }}</h6>
+    <h6>{{ publication.info }}</h6>
+    {% if publication.doi_url %}
+    <a href={{ publication.doi_url }}>DOI</a>
+    {% endif %}
+    {% if publication.open_access_url %}
+    | <a href={{ publication.open_access_url }}>Open access</a>
+    {% endif %}
+    <p></p>
+    {% endfor %}
+    {% endif %}
 </div>
 
 <!-- Other relevant publication -->
 {% if other_publication_list %}
 <hr>
-<h1 class="mb-5 text-secondary">Other relevant publications</h1>
+<h1 id="other" class="mb-5 text-secondary">Other relevant publications</h1>
 <div>
-{% for publication in other_publication_list %}
-<span class="text-muted">{{publication.type }}</span>
-<h4>{{ publication.title }}</h4>
-<h6 class="font-weight-bold">{{ publication.authors }}</h6>
-<h6>{{ publication.info }}</h6>
-{% if publication.doi_url %}
-<a href={{ publication.doi_url }}>DOI</a>
-{% endif %}
-{% if publication.open_access_url %}
- | <a href={{ publication.open_access_url }}>Open access</a>
-{% endif %}
-<p></p>
-{% endfor %}
-{% endif %}
+    {% for publication in other_publication_list %}
+    <span class="text-muted">{{publication.type }}</span>
+    <h4>{{ publication.title }}</h4>
+    <h6 class="font-weight-bold">{{ publication.authors }}</h6>
+    <h6>{{ publication.info }}</h6>
+    {% if publication.doi_url %}
+    <a href={{ publication.doi_url }}>DOI</a>
+    {% endif %}
+    {% if publication.open_access_url %}
+    | <a href={{ publication.open_access_url }}>Open access</a>
+    {% endif %}
+    <p></p>
+    {% endfor %}
+    {% endif %}
 </div>
 
 <hr>

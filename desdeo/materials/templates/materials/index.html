@@ -1,24 +1,32 @@
-{% extends "base/base.html" %} 
+{% extends "base/base.html" %}
 {% load static %}
 
 {% block title %}
-  Materials
+Materials
 {% endblock %}
 
 {% block content %}
-<h1 class="mb-5 text-secondary">Materials</h1>
+<h1 class="mb-3 text-secondary">Materials</h1>
+<h3 class="mb-1 text-secondary">Contents</h3>
 {% if materials_files_list %}
 {% for material_files in materials_files_list %}
-    <h4>{{ material_files.0.name }}</h4>
-    {% if material_files.1 %}
-    <ul>
-        {% for file in material_files.1%}
-        <li>{{ file.name }}: <a href="{{ file.file.url }}">{{ file.name }}</a></li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+<a href="#{{ material_files.0.id }}">{{ material_files.0.name }}</a> {% if not forloop.last %} | {% endif %}
+{% endfor %}
+<hr>
+{% for material_files in materials_files_list %}
+<h4><a id="{{ material_files.0.id }}">{{ material_files.0.name }}</a></h4>
+<p>{{ material_files.0.description }}</p>
+{% if material_files.1 %}
+<ul>
+  {% for file in material_files.1%}
+  <li><a href="{{ file.file.url }}">{{ file.name }}</a> - {{ file.description }}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}
 {% endfor %}
 {% else %}
 <p>No materials added yet.</p>
 {% endif %}
+<hr>
 {% endblock %}

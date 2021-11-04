@@ -14,7 +14,7 @@ def index(request):
         files_list.append(files)
 
     context = {
-        "materials_files_list": zip(material_list, files_list),
+        "materials_files_list": list(zip(material_list, files_list)),
         "subpages_list": subpages_list,
         "this_page": "materials",
     }

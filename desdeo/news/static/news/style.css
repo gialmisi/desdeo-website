@@ -3,3 +3,21 @@
 	margin: auto;
 	display: block;
 }
+
+.anchor {
+    display: block; 
+    content: " "; 
+    margin-top: -75px;
+    height: 75px;
+    visibility: hidden; 
+}
+
+#anchor-link {
+    text-decoration: none;
+    color: lightgray;
+}
+
+#anchor-link:hover {
+    color: grey;
+}
+
